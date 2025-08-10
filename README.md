@@ -1,8 +1,6 @@
 # Merkle-Run — Lightweight, Tamper-Evident, Deterministic Python Runner
  Merkle-Run is a minimal but powerful tool that runs any Python script under full observation, recording every side effect (file I/O, subprocess calls, network attempts, randomness) in a tamper-evident Merkle chain log.
 
-
-
 It can:
 - Block or allow network access
 - Track exactly how many network connections were attempted
@@ -39,6 +37,40 @@ Reproducibility — Ensure experiments and processes can be repeated exactly.
 Forensics — Tamper-evident logs for later investigation.
 
 Education — Learn monkeypatching, Merkle trees, determinism, and I/O tracing in one project.
+
+
+💡 **OUR Current Problem**
+When you want to monitor what a program does, existing tools are often:
+
+Very heavy — they listen to everything happening at the operating system level (e.g., ReproZip).
+
+Too complex — they perform deep analyses that slow things down (e.g., noWorkflow).
+
+Intrusive — they require you to modify your code to work (e.g., ReciPy).
+
+And often, these tools are built for researchers or large teams, not for someone who just wants a small, easy-to-run utility.
+
+🚀 **How Our Project Changes This**
+Merkle-Run is revolutionary in its simplicity:
+
+It does not modify your script.
+
+It does not modify your system (no admin rights needed).
+
+It sees everything the script does (opened files, internet activity, subprocess calls, randomness).
+
+It can block certain actions (e.g., block the internet).
+
+It keeps a tamper-evident proof of everything that happened (via a Merkle hash chain).
+
+It can replay the script exactly to see if it behaves the same way — perfect for detecting hidden or unreliable behavior.
+
+🎯 **Why It’s Rare**
+Other tools either record actions or block them, but not both in a lightweight format.
+
+To my knowledge, no one has built a mini Python runner that does this purely with monkeypatching (temporary replacement of functions) and without heavy dependencies.
+
+The Merkle approach for logs is common in blockchain, but rarely applied to program execution monitoring.
 
 ---
 
