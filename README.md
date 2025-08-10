@@ -1,6 +1,11 @@
 # Merkle-Run — Lightweight, Tamper-Evident, Deterministic Python Runner
  Merkle-Run is a minimal but powerful tool that runs any Python script under full observation, recording every side effect (file I/O, subprocess calls, network attempts, randomness) in a tamper-evident Merkle chain log.
 
+
+מרקלראן הוא "מצלמת אבטחה + קופסה שחורה" לקוד.
+הוא מריץ סקריפט פייתון ותופס כל פעולה שהוא עושה — פתיחת קבצים, גישה לרשת, הרצת תוכניות חיצוניות, שימוש במספרים אקראיים — ושומר הכול ביומן מיוחד שלא ניתן לשנות (באמצעות שרשרת האש מרקל).
+אחר כך אפשר להריץ שוב את אותו הסקריפט במצב בדיקה (verify) ולראות אם הוא מתנהג בדיוק אותו דבר, כדי לחשוף קוד לא יציב או התנהגות מוסתרת.
+
 It can:
 - Block or allow network access
 - Track exactly how many network connections were attempted
